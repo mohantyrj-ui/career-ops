@@ -1,0 +1,453 @@
+# Portal Scanner Configuration — Ranjan Mohanty
+# Senior Program Manager | Capital Projects | Telecom | AI-Augmented PM
+# Target: Senior PM, Director PMO, Head of PMO, TPM, AI PM
+# Location: Aurora IL (Chicagoland) — hybrid/remote, open to energy sector
+
+title_filter:
+  positive:
+    - "Program Manager"
+    - "Project Manager"
+    - "Senior Program Manager"
+    - "Director of Program Management"
+    - "Director, Program"
+    - "VP Program"
+    - "Head of PMO"
+    - "PMO Director"
+    - "PMO Manager"
+    - "PMO Lead"
+    - "Portfolio Manager"
+    - "Portfolio Director"
+    - "Delivery Manager"
+    - "Technical Program Manager"
+    - "TPM"
+    - "AI Program Manager"
+    - "Digital Transformation"
+    - "Transformation Lead"
+    - "Transformation Manager"
+    - "Change Management"
+    - "Capital Projects"
+    - "Capital Program"
+    - "Construction Program"
+    - "Infrastructure Program"
+    - "IT Program Manager"
+    - "IT Project Manager"
+    - "Engagement Manager"
+    - "Senior Consultant"
+    - "Delivery Lead"
+    - "Program Director"
+    - "Project Director"
+  negative:
+    - "Junior"
+    - "Intern"
+    - "Entry Level"
+    - "Associate Project"
+    - "Coordinator"
+    - "Scheduler"
+    - "Estimator"
+    - "Accountant"
+    - "Sales"
+    - "Marketing"
+    - "HR "
+    - "Recruiter"
+  seniority_boost:
+    - "Senior"
+    - "Principal"
+    - "Lead"
+    - "Head"
+    - "Director"
+    - "VP"
+    - "Staff"
+
+# -- Search queries --
+# Broad discovery via WebSearch + site: filters
+
+search_queries:
+
+  # -- LinkedIn (broad PM discovery) --
+  - name: LinkedIn — Senior PM Chicago/Remote
+    query: 'site:linkedin.com/jobs "Senior Program Manager" OR "Director of Program Management" Chicago OR remote Illinois posted:past-2-days'
+    enabled: true
+
+  - name: LinkedIn — Capital Projects PM
+    query: 'site:linkedin.com/jobs "Capital Projects" "Program Manager" OR "Project Director" remote OR Chicago'
+    enabled: true
+
+  - name: LinkedIn — Energy Sector PM
+    query: 'site:linkedin.com/jobs "Program Manager" energy OR utilities OR "power generation" OR "renewable energy" Illinois OR remote'
+    enabled: true
+
+  - name: LinkedIn — TPM / AI PM
+    query: 'site:linkedin.com/jobs "Technical Program Manager" OR "AI Program Manager" senior remote OR Chicago'
+    enabled: true
+
+  # -- Indeed --
+  - name: Indeed — Senior PM Chicago
+    query: 'site:indeed.com "Senior Program Manager" OR "Director Program Management" Chicago OR Aurora IL OR remote'
+    enabled: true
+
+  - name: Indeed — PMO Director / Head of PMO
+    query: 'site:indeed.com "Head of PMO" OR "PMO Director" OR "PMO Manager" Illinois OR remote'
+    enabled: true
+
+  - name: Indeed — Energy PM
+    query: 'site:indeed.com "Program Manager" energy OR utilities OR construction Illinois OR remote senior'
+    enabled: true
+
+  # -- Greenhouse (tech companies with PM teams) --
+  - name: Greenhouse — Senior PM / TPM
+    query: 'site:job-boards.greenhouse.io "Senior Program Manager" OR "Technical Program Manager" OR "Director of Program Management"'
+    enabled: true
+
+  - name: Greenhouse — TPM remote
+    query: 'site:boards.greenhouse.io "Technical Program Manager" OR "Senior Program Manager" remote'
+    enabled: true
+
+  # -- Lever --
+  - name: Lever — Senior PM / Director PMO
+    query: 'site:jobs.lever.co "Senior Program Manager" OR "Director of Program Management" OR "Head of PMO" remote'
+    enabled: true
+
+  # -- Ashby --
+  - name: Ashby — Senior PM / TPM
+    query: 'site:jobs.ashbyhq.com "Program Manager" OR "Technical Program Manager" OR "Delivery Manager" senior remote'
+    enabled: true
+
+  # -- Wellfound (startups) --
+  - name: Wellfound — Senior PM / TPM
+    query: 'site:wellfound.com "Senior Program Manager" OR "Technical Program Manager" OR "Head of PMO" remote'
+    enabled: true
+
+  # -- Workable --
+  - name: Workable — Senior PM
+    query: 'site:apply.workable.com "Senior Program Manager" OR "Program Director" OR "PMO" remote OR Chicago'
+    enabled: true
+
+  # -- Consulting firms (Glassdoor/company sites) --
+  - name: Consulting firms — PM / Engagement Manager
+    query: '"Engagement Manager" OR "Senior Consultant" "program management" OR "capital projects" Accenture OR Deloitte OR BCG OR McKinsey remote'
+    enabled: true
+
+  # -- Energy sector --
+  - name: Energy companies — PM roles
+    query: '"Program Manager" OR "Project Director" "energy" OR "utilities" OR "renewable" OR "grid" OR "power plant" Illinois OR Midwest OR remote senior'
+    enabled: true
+
+  # -- Telecom --
+  - name: Telecom — Senior PM / TPM
+    query: '"Program Manager" OR "Technical Program Manager" telecom OR "network deployment" OR "5G" OR "fiber" senior remote OR Chicago'
+    enabled: true
+
+  # -- Construction / EPC --
+  - name: EPC / Construction — Program Manager
+    query: '"Program Manager" OR "Project Director" construction OR "EPC" OR "capital projects" OR "infrastructure" senior Illinois OR remote'
+    enabled: true
+
+  # -- Medical devices / Healthcare --
+  - name: Medical devices — Senior PM
+    query: 'site:linkedin.com/jobs OR site:indeed.com "Program Manager" "medical device" OR "medtech" OR "healthcare" Illinois OR remote senior'
+    enabled: true
+
+  # -- Manufacturing --
+  - name: Manufacturing — Senior PM
+    query: '"Program Manager" OR "Project Director" manufacturing OR "supply chain" OR "operations" Illinois OR Midwest senior remote'
+    enabled: true
+
+  # -- Himalayas / Remote-first aggregators --
+  - name: Himalayas — Remote Senior PM
+    query: 'site:himalayas.app "Senior Program Manager" OR "Technical Program Manager" OR "Director of Program Management" remote'
+    enabled: true
+
+  - name: WeWorkRemotely — PM
+    query: 'site:weworkremotely.com "Program Manager" OR "Technical Program Manager" OR "Delivery Manager" senior'
+    enabled: true
+
+# -- Tracked companies --
+# Companies whose career pages are checked directly via API or Playwright.
+
+tracked_companies:
+
+  # -- Technology (strong PM/TPM teams) --
+
+  - name: Microsoft
+    careers_url: https://careers.microsoft.com/us/en/search-results?keywords=program+manager&location=United+States
+    scan_method: websearch
+    scan_query: 'site:careers.microsoft.com "Senior Program Manager" OR "Principal Program Manager" remote OR Chicago'
+    notes: "Major TPM/PM employer. Hybrid-friendly."
+    enabled: true
+
+  - name: Google
+    careers_url: https://careers.google.com/jobs/results/?q=program+manager
+    scan_method: websearch
+    scan_query: 'site:careers.google.com "Senior Program Manager" OR "Technical Program Manager" Illinois OR remote'
+    notes: "Large TPM org."
+    enabled: true
+
+  - name: Amazon / AWS
+    careers_url: https://www.amazon.jobs/en/search?base_query=program+manager
+    scan_method: websearch
+    scan_query: 'site:amazon.jobs "Senior Program Manager" OR "Technical Program Manager" remote OR Chicago'
+    notes: "Major PM employer. Many remote roles."
+    enabled: true
+
+  - name: Salesforce
+    careers_url: https://job-boards.greenhouse.io/salesforce
+    scan_method: websearch
+    scan_query: 'site:salesforce.com/company/careers "Program Manager" OR "Engagement Manager" OR "PMO" senior'
+    notes: "Enterprise SaaS. Strong PM culture."
+    enabled: true
+
+  - name: ServiceNow
+    careers_url: https://jobs.lever.co/servicenow
+    scan_method: websearch
+    scan_query: 'site:jobs.lever.co/servicenow "Program Manager" OR "TPM" OR "Delivery Manager"'
+    notes: "Digital transformation platform. Heavy PM demand."
+    enabled: true
+
+  - name: IBM
+    careers_url: https://www.ibm.com/careers/us-en/search/?q=program+manager
+    scan_method: websearch
+    scan_query: 'site:ibm.com/careers "Senior Program Manager" OR "Program Director" OR "PMO" remote OR Chicago'
+    notes: "Strong PM/consulting practice. Chicago area presence."
+    enabled: true
+
+  - name: Motorola Solutions
+    careers_url: https://job-boards.greenhouse.io/motorolasolutions
+    api: https://boards-api.greenhouse.io/v1/boards/motorolasolutions/jobs
+    notes: "Chicago HQ. Public safety tech. PM/TPM roles."
+    enabled: true
+
+  - name: Zebra Technologies
+    careers_url: https://www.zebra.com/us/en/about-zebra/careers.html
+    scan_method: websearch
+    scan_query: 'site:zebra.com/careers "Program Manager" OR "Project Manager" OR "PMO" senior'
+    notes: "Lincolnshire IL HQ. Tech hardware/software."
+    enabled: true
+
+  # -- Consulting / Professional Services --
+
+  - name: Accenture
+    careers_url: https://www.accenture.com/us-en/careers/jobsearch?jk=program+manager
+    scan_method: websearch
+    scan_query: 'site:accenture.com/us-en/careers "Senior Manager" OR "Engagement Manager" "program management" OR "capital projects" Chicago OR remote'
+    notes: "Chicago HQ. Large PM consulting practice."
+    enabled: true
+
+  - name: Deloitte
+    careers_url: https://apply.deloitte.com/careers/SearchJobs/program%20manager
+    scan_method: websearch
+    scan_query: 'site:apply.deloitte.com "Program Manager" OR "Project Manager" OR "PMO" Chicago OR Illinois OR remote senior'
+    notes: "Big 4. Strong PM/transformation practice."
+    enabled: true
+
+  - name: Booz Allen Hamilton
+    careers_url: https://job-boards.greenhouse.io/boozallenhamilton
+    api: https://boards-api.greenhouse.io/v1/boards/boozallenhamilton/jobs
+    notes: "Management consulting. Many PM/program roles."
+    enabled: true
+
+  - name: KPMG
+    careers_url: https://job-boards.greenhouse.io/kpmgus
+    api: https://boards-api.greenhouse.io/v1/boards/kpmgus/jobs
+    notes: "Big 4. Program management and transformation."
+    enabled: true
+
+  # -- Energy & Utilities --
+
+  - name: Exelon / ComEd
+    careers_url: https://jobs.exeloncorp.com/search/?q=program+manager
+    scan_method: websearch
+    scan_query: 'site:jobs.exeloncorp.com "Program Manager" OR "Project Manager" OR "Capital" Illinois'
+    notes: "Chicago HQ. Largest US utility. Capital projects PM demand."
+    enabled: true
+
+  - name: NextEra Energy
+    careers_url: https://jobs.nexteraenergy.com/search/?q=program+manager
+    scan_method: websearch
+    scan_query: 'site:jobs.nexteraenergy.com "Program Manager" OR "Project Manager" OR "Capital" senior'
+    notes: "Largest renewable energy company in US."
+    enabled: true
+
+  - name: Ameren
+    careers_url: https://ameren.wd5.myworkdayjobs.com/en-US/Ameren_Careers
+    scan_method: websearch
+    scan_query: 'site:ameren.com/careers OR "ameren" "Program Manager" OR "Project Manager" capital OR energy Illinois'
+    notes: "St. Louis / Illinois utility. Capital construction PM roles."
+    enabled: true
+
+  - name: Enbridge
+    careers_url: https://jobs.enbridge.com/search/?q=program+manager
+    scan_method: websearch
+    scan_query: 'site:jobs.enbridge.com "Program Manager" OR "Project Director" pipeline OR energy OR capital'
+    notes: "Pipeline infrastructure. Chicago presence."
+    enabled: true
+
+  - name: Invenergy
+    careers_url: https://invenergy.com/careers
+    scan_method: websearch
+    scan_query: 'site:invenergy.com/careers "Program Manager" OR "Project Manager" OR "Capital" renewable OR energy'
+    notes: "Chicago HQ. Largest private renewable energy developer in North America."
+    enabled: true
+
+  - name: Constellation Energy
+    careers_url: https://jobs.constellationenergy.com/search/?q=program+manager
+    scan_method: websearch
+    scan_query: 'site:jobs.constellationenergy.com "Program Manager" OR "Project Manager" capital OR nuclear OR energy'
+    notes: "Chicago HQ. Nuclear + clean energy. Capital program focus."
+    enabled: true
+
+  - name: Enel (North America)
+    careers_url: https://jobs.enel.com/en/search/?q=program+manager
+    scan_method: websearch
+    scan_query: '"enel" "Program Manager" OR "Project Director" renewable OR energy OR capital North America'
+    notes: "Renewable energy giant. US expansion."
+    enabled: true
+
+  # -- Construction / EPC / Engineering --
+
+  - name: AECOM
+    careers_url: https://aecom.jobs/search/?q=program+manager
+    scan_method: websearch
+    scan_query: 'site:aecom.jobs "Senior Program Manager" OR "Program Director" OR "PMO" capital OR infrastructure OR construction'
+    notes: "Global EPC/infrastructure firm. Major PM employer."
+    enabled: true
+
+  - name: Jacobs Engineering
+    careers_url: https://jobs.jacobs.com/search/?q=program+manager
+    scan_method: websearch
+    scan_query: 'site:jobs.jacobs.com "Program Manager" OR "Project Director" capital OR infrastructure OR energy senior'
+    notes: "Global engineering/construction. Strong PM culture."
+    enabled: true
+
+  - name: Fluor
+    careers_url: https://www.fluor.com/careers
+    scan_method: websearch
+    scan_query: '"fluor" "Program Manager" OR "Project Director" energy OR capital OR EPC remote OR US'
+    notes: "Global EPC firm. Capital projects PM."
+    enabled: true
+
+  - name: Bechtel
+    careers_url: https://www.bechtel.com/careers/job-search/?q=program+manager
+    scan_method: websearch
+    scan_query: 'site:bechtel.com/careers "Program Manager" OR "Project Director" energy OR infrastructure OR capital'
+    notes: "Top global EPC. Capital projects. Energy sector."
+    enabled: true
+
+  - name: Turner Construction
+    careers_url: https://www.turnerconstruction.com/careers
+    scan_method: websearch
+    scan_query: '"turner construction" "Program Manager" OR "Project Director" OR "Senior PM" Chicago OR Illinois'
+    notes: "Top US general contractor. Chicago office."
+    enabled: true
+
+  - name: Skanska USA
+    careers_url: https://jobs.skanska.com/search/?q=program+manager&location=United+States
+    scan_method: websearch
+    scan_query: 'site:jobs.skanska.com "Program Manager" OR "Project Director" construction OR infrastructure Illinois OR remote'
+    notes: "Global construction. Chicago presence."
+    enabled: true
+
+  - name: WSP Global
+    careers_url: https://www.wsp.com/en-US/careers/job-search?q=program+manager
+    scan_method: websearch
+    scan_query: '"wsp" "Program Manager" OR "PMO" OR "Project Director" infrastructure OR energy Chicago OR Illinois OR remote'
+    notes: "Global engineering/consulting. Strong PM demand."
+    enabled: true
+
+  - name: HDR Inc
+    careers_url: https://jobs.hdrinc.com/search/?q=program+manager
+    scan_method: websearch
+    scan_query: 'site:jobs.hdrinc.com "Program Manager" OR "Project Director" infrastructure OR energy Illinois OR remote'
+    notes: "Engineering/architecture/consulting. Capital programs."
+    enabled: true
+
+  # -- Telecom --
+
+  - name: T-Mobile
+    careers_url: https://careers.t-mobile.com/search/?q=program+manager
+    scan_method: websearch
+    scan_query: 'site:careers.t-mobile.com "Senior Program Manager" OR "TPM" OR "Technical Program Manager" remote'
+    notes: "Major telecom. Network rollout PM roles."
+    enabled: true
+
+  - name: AT&T
+    careers_url: https://www.att.jobs/search-jobs/program+manager/United-States/117/1/2/6252001/39/-98/50/2
+    scan_method: websearch
+    scan_query: 'site:att.jobs "Senior Program Manager" OR "Director Program Management" OR "TPM" remote OR Dallas'
+    notes: "Ranjan has Nokia/AT&T network history."
+    enabled: true
+
+  - name: Ericsson
+    careers_url: https://jobs.ericsson.com/careers/search/?q=program+manager
+    scan_method: websearch
+    scan_query: 'site:jobs.ericsson.com "Program Manager" OR "Project Director" telecom OR network OR 5G US OR remote'
+    notes: "Nokia competitor — relevant telecom experience."
+    enabled: true
+
+  - name: Nokia
+    careers_url: https://careers.nokia.com/jobs/search/?q=program+manager
+    scan_method: websearch
+    scan_query: 'site:careers.nokia.com "Senior Program Manager" OR "Project Director" OR "Customer Program Manager" US OR remote'
+    notes: "Former employer. Strong match."
+    enabled: true
+
+  # -- Medical Devices / Healthcare --
+
+  - name: Abbott Laboratories
+    careers_url: https://www.jobs.abbott/search-jobs/program+manager/US/3257/1
+    scan_method: websearch
+    scan_query: 'site:jobs.abbott "Senior Program Manager" OR "TPM" OR "Director Program" Illinois OR remote'
+    notes: "Abbott Park IL HQ. Medical devices. Ranjan has medical device PM experience."
+    enabled: true
+
+  - name: Baxter International
+    careers_url: https://www.baxter.com/careers
+    scan_method: websearch
+    scan_query: '"baxter" "Program Manager" OR "Project Director" "medical" OR "healthcare" Illinois OR remote senior'
+    notes: "Deerfield IL. Medical devices/pharma. Relevant sector."
+    enabled: true
+
+  - name: Medtronic
+    careers_url: https://jobs.medtronic.com/jobs/search/?q=program+manager
+    scan_method: websearch
+    scan_query: 'site:jobs.medtronic.com "Senior Program Manager" OR "Director Program" OR "TPM" remote OR Illinois'
+    notes: "Medical devices giant. Strong PM culture."
+    enabled: true
+
+  - name: Stryker
+    careers_url: https://careers.stryker.com/jobs/search/?q=program+manager
+    scan_method: websearch
+    scan_query: 'site:careers.stryker.com "Program Manager" OR "Project Director" OR "PMO" medical OR device senior'
+    notes: "Medical devices. Program management roles."
+    enabled: true
+
+  # -- Manufacturing --
+
+  - name: Caterpillar
+    careers_url: https://careers.caterpillar.com/en/jobs/?q=program+manager
+    scan_method: websearch
+    scan_query: 'site:careers.caterpillar.com "Senior Program Manager" OR "Project Director" OR "PMO" Illinois OR remote'
+    notes: "Deerfield IL HQ (formerly Peoria). Manufacturing giant. Capital/ops PM."
+    enabled: true
+
+  - name: John Deere
+    careers_url: https://www.deere.com/en/our-company/john-deere-careers/
+    scan_method: websearch
+    scan_query: '"john deere" "Program Manager" OR "Project Director" OR "TPM" Illinois OR Iowa OR remote senior'
+    notes: "Manufacturing/ag tech. Strong PM demand."
+    enabled: true
+
+  - name: Kraft Heinz
+    careers_url: https://careers.kraftheinzcompany.com/search/?q=program+manager
+    scan_method: websearch
+    scan_query: 'site:careers.kraftheinzcompany.com "Program Manager" OR "Project Director" OR "PMO" Chicago OR remote'
+    notes: "Chicago HQ. Food manufacturing. Capital projects PM."
+    enabled: true
+
+  # -- Integrated Project Management (reference — current employer) --
+  # Disabled — current/former employer
+  - name: Integrated Project Management
+    careers_url: https://www.ipmcinc.com/careers
+    scan_method: websearch
+    scan_query: '"ipmcinc" OR "integrated project management" careers jobs'
+    notes: "Current employer — disabled."
+    enabled: false
